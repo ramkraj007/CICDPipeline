@@ -5,7 +5,7 @@ phases:
       - echo "Logging into Amazon ECR started on $(date)"
       - aws --version
       - echo "Logging into Amazon ECR...."
-      - $(aws ecr get-login --no-include-email --region us-west-1)
+      - (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin 767422920162.dkr.ecr.us-west-1.amazonaws.com
       - echo "setting repository URI...."
       - export REPOSITORY_URI=767422920162.dkr.ecr.us-west-1.amazonaws.com/cicdpipeline
       - echo "setting image tag...."
