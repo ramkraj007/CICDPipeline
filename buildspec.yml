@@ -28,7 +28,10 @@ phases:
       - echo "setting container name..."
       - export DOCKER_CONTAINER_NAME=cdcicontainer
       - echo "writing image definitions file..."
-      - printf '[{"name":"%s","imageUri": "%s" }]' "$DOCKER_CONTAINER_NAME" "$REPOSITORY_URI"
+      - echo "writing DOCKER_CONTAINER_NAME definitions file..."
+      - printf '[{"name":"%s" }]' $DOCKER_CONTAINER_NAME
+      - echo "writing REPOSITORY_URI definitions file..."
+      - printf '[{"imageUri": "%s" }]' $REPOSITORY_URI
       - echo $DOCKER_CONTAINER_NAME
       - echo "printing imagedefinitions.json"
       - cat imagedefinitions.json
