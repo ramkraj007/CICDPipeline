@@ -13,9 +13,9 @@ import java.util.Map;
 public class HelloController {
 
     @GetMapping
-    ResponseEntity<Map<String,String>> Hello() {
+    String Hello() {
 
-        return ResponseEntity.ok().body(Map.of("Testing","Hello World, Spring Boot!"));
+        return "Hello World, Spring Boot!";
     }
 
 }
